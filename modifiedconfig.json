@@ -453,6 +453,7 @@
             "port": 500
           }
         ],
+        
         "addons": [
           {
             "key": "traffic-base-models",
@@ -583,6 +584,140 @@
             "inline": true
           }
         ]
-      }
+      },
+      {
+        "name": "Headwind Simulations",
+        "key": "headwind",
+        "logoUrl": "https://raw.githubusercontent.com/headwind-msfs/branding/main/logos/Headwind.svg",
+        "defs": [
+            {
+                "kind": "addonCategory",
+                "key": "aircraft",
+                "title": "Aircraft"
+            },
+            {
+                "kind": "addonCategory",
+                "key": "simbridge",
+                "styles": [
+                    "align-bottom"
+                ]
+            },
+            {
+                "kind": "externalApp",
+                "key": "mcdu-server",
+                "prettyName": "MCDU Server",
+                "detectionType": "ws",
+                "url": "ws://localhost:8380"
+            },
+            {
+                "kind": "externalApp",
+                "key": "simbridge-app",
+                "prettyName": "SimBridge",
+                "detectionType": "http",
+                "url": "http://localhost:8380/health",
+                "killUrl": "http://localhost:8380/health/kill",
+                "killMethod": "GET"
+            },
+            {
+                "kind": "externalApp",
+                "key": "msfs",
+                "prettyName": "MSFS",
+                "detectionType": "tcp",
+                "port": 500
+            }
+        ],
+        "addons": [
+            {
+                "key": "A339X",
+                "name": "A339X",
+                "repoOwner": "headwind-msfs",
+                "repoName": "a339x",
+                "category": "@aircraft",
+                "aircraftName": "A330-941",
+                "titleImageUrl": "https://raw.githubusercontent.com/headwind-msfs/branding/main/logos/A339X-Dark.svg",
+                "titleImageUrlSelected": "https://raw.githubusercontent.com/headwind-msfs/branding/main/logos/A339X-Light.svg",
+                "enabled": true,
+                "backgroundImageUrls": [
+                    "https://raw.githubusercontent.com/headwind-msfs/branding/main/images/installer_bg.png"
+                ],
+                "shortDescription": "Airbus 330-900",
+                "description": "The Airbus A330neo is a wide-body airliner developed by Airbus from the Airbus A330. The A330neo has 260 and 300 seats in a typical three-class layout, or up to 460 in economy class and has a range of 7,200 nautical miles. It is exclusively powered by the Rolls-Royce Trent 7000.",
+                "techSpecs": [
+                    {
+                        "name": "Engines",
+                        "value": "Rolls-Royce Trent 7000"
+                    },
+                    {
+                        "name": "APU",
+                        "value": "APS3200"
+                    }
+                ],
+                "targetDirectory": "headwind-aircraft-a330-900",
+                "alternativeNames": [
+                    "A339X",
+                    "a339x"
+                ],
+                "tracks": [
+                    {
+                        "name": "Stable",
+                        "key": "A339X-stable",
+                        "url": "https://github.com/headwind-msfs/a330-900/releases/download/vstable/",
+                        "description": "Stable is our variant that is based on the FlyByWire A32NX stable version and has the fewest issues and best performance. This version won't always up-to-date, but we promise that it will work with all of MSFS's significant updates.",
+                        "isExperimental": false,
+                        "releaseModel": {
+                            "type": "githubRelease"
+                        }
+                    },
+                    {
+                        "name": "Development",
+                        "key": "A339X-dev",
+                        "url": "https://github.com/headwind-msfs/a330-900/releases/download/vmain/",
+                        "description": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
+                        "isExperimental": true,
+                        "warningContent": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
+                        "releaseModel": {
+                            "type": "githubBranch",
+                            "branch": "main"
+                        }
+                    }
+                ],
+                "dependencies": [
+                    {
+                        "addon": "@headwind/simbridge",
+                        "optional": true,
+                        "modalText": "SimBridge allows the A339X to expose remote tools like the Web MCDU, as well as use the external terrain database."
+                    }
+                ],
+                "incompatibleAddons": [
+                    {
+                        "title": "Toolbar Pushback",
+                        "creator": "AmbitiousPilots",
+                        "description": "This add-on sometimes causes performance issues and also prevents the A339X from taxiing. Consider removing it in case of issues."
+                    }
+                ],
+                "myInstallPage": {
+                    "links": [
+                        {
+                            "url": "https://docs.flybywiresim.com/fbw-a32nx/",
+                            "title": "A32NX Documentation"
+                        }
+                    ],
+                    "directories": [
+                        {
+                            "location": {
+                                "in": "packageCache",
+                                "path": "work"
+                            },
+                            "title": "Work Folder"
+                        }
+                    ]
+                },
+                "disallowedRunningExternalApps": [
+                    "@/msfs",
+                    "@/mcdu-server"
+                ]
+            }
+        ]
+      }  
     ]
   }
