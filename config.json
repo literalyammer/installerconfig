@@ -22,7 +22,7 @@
 		"installPath": "E:\\GAMES\\MFSP\\Community",
 		"separateTempLocation": false,
 		"tempLocation": "E:\\GAMES\\MFSP\\Community",
-		"configDownloadUrl": "https://github.com/literalyammer/fbwinstallerconfigs/blob/4de2e3afe0cd0ad62604ec96f9d7551df8038128/configmod.json"
+		"configDownloadUrl": "https://github.com/literalyammer/installerconfig/releases/download/modifiedconfig.json"
 	},
 	"cache": {
 		"main": {
