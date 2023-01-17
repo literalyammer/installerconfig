@@ -56,7 +56,7 @@
             "category": "@aircraft",
             "aircraftName": "A320-251N",
             "titleImageUrl": "https://raw.githubusercontent.com/literalyammer/installerconfig/main/logos/cfms.svg",
-            "titleImageUrlSelected": "https://flybywiresim.b-cdn.net/installer/media-assets/addon-titles/fbw-a32nx/light.svg",
+            "titleImageUrlSelected": "https://raw.githubusercontent.com/literalyammer/installerconfig/main/logos/cfmslight.svg",
             "enabled": true,
             "backgroundImageUrls": [
               "https://flybywiresim.b-cdn.net/installer/media-assets/addon-headers/fbw-a32nx/1.png"
